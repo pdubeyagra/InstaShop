@@ -9,6 +9,8 @@ import {
 const initialState = {
   items: [],
 };
+// const persistedState = localStorage.getItem('cartState');
+// const initialState = persistedState ? JSON.parse(persistedState) : { items: [] };
 
 const cartReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -37,15 +39,18 @@ const cartReducer = (state = initialState, action) => {
         items: state.items.filter((item) => item.id !== action.payload),
       };
 
-    case UPDATE_CART_QUANTITY:
-      return {
-        ...state,
-        items: state.items.map((item) =>
-          item.id === action.payload.itemId
-            ? { ...item, quantity: action.payload.quantity }
+      case UPDATE_CART_QUANTITY:
+        const { itemId, quantity } = action.payload;
+        const updatedItems = state.items.map((item) =>
+          item.id === itemId
+            ? { ...item, quantity: Math.max(quantity, 1) } // Ensures quantity doesn't go negative
             : item
-        ),
-      };
+        );
+        return {
+          ...state,
+          items: updatedItems,
+        };
+      
 
     default:
       return state;

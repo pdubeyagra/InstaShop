@@ -1,0 +1,103 @@
+.Cartitems{
+    margin: 100px 170px;
+    .cartitems-main{
+        display: grid;
+        grid-template-columns: 1fr 3fr 1fr 1fr 1fr 1fr 1fr;
+        align-items: center;
+        gap: 75px;
+        padding: 20px 0px;
+        color: #454545;
+        font-size: 18px;
+        font-weight: 600;
+    }
+    hr{
+        height: 3px;
+        background: #e2e2e2;
+        border: 0;
+    }
+    .cartitems-format{
+        font-size: 17px;
+        font-weight: 500;
+        .cart_image{
+            height: 150px;
+        }
+        .cartitems-quantity{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            // border: 2px solid #ebebeb;
+            // background-color: #fff;
+        }
+        .cart-remove-icon{
+            width: 15px;
+            margin: 0px, 40px;
+            cursor: pointer;
+        }
+    }
+    .empty-cart-message{
+        h1{
+            font-size: 40px;
+            padding: 75px 0px;
+        }
+    }
+    .cartitems-last{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 50px 0px;
+        .cartitems-total{
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            margin-right: 200px;
+            gap: 10px;
+            .cartitems-total-checkout{
+                display: flex;
+                justify-content: space-between;
+                padding: 15px 0px;
+            }
+            button{
+                width: 262px;
+                height: 58px;
+                outline: none;
+                border: none;
+                background: #ff5a5a;
+                color: #fff;
+                font-size: 16px;
+                font-weight: 600;
+                cursor: pointer;
+            }
+        }
+        .cartitems-promocode{
+            flex: 1;
+            font-size: 16px;
+            font-weight: 500;
+            p{
+                color: #555;
+            }
+            .promobox{
+                width: 409px;
+                margin-top: 15px;
+                padding-left: 20px;
+                height: 58px;
+                background: #eaeaea;
+                input{
+                    border: none;
+                    outline: none;
+                    background: transparent;
+                    font-size: 16px;
+                    height: 58px;
+                    width: 300px;
+                }
+                button{
+                    background: black;
+                    cursor: pointer;
+                    height: 58px;
+                    font-size: 16px;
+                    color: white;
+                    width: 100px;
+                }
+            }
+        }
+    }
+}
