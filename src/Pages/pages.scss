@@ -1,0 +1,112 @@
+.ShopCategory {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0px 170px;
+  margin: 30px auto;
+  width: 82%;
+  gap: 30px;
+  .shopcategory-indexSort {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    .shopcategory-index {
+      .onetotwelve {
+        font-weight: 700;
+        font-size: 12px;
+      }
+    }
+    .shopcategort-sort {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 10px 20px;
+      border-radius: 20px;
+      border: 1px solid #888;
+    }
+  }
+  .shopcategory-product {
+    width: 100%;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 15px;
+  }
+  .shopcategory-loadmore {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ededed;
+    padding: 10px;
+    border-radius: 20px;
+    color: #787878;
+    width: 10%;
+    align-self: center;
+    cursor: pointer;
+    span {
+      width: 60px;
+    }
+  }
+}
+
+.LoginSignUp {
+  width: 100%;
+  height: 80vh;
+  background: #fce3fe;
+  padding-top: 50px;
+  .loginsignup-container {
+    width: 300px;
+    height: 460px;
+    background: white;
+    margin: auto;
+    padding: 40px 60px;
+    h1 {
+      margin: 20px 0px;
+    }
+    .loginsignup-fields {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 30px;
+      input {
+        height: 50px;
+        padding-left: 20px;
+        border: 1px solid #c9c9c9;
+        outline: none;
+        color: #5c5c5c;
+        font-size: 18px;
+      }
+      .loginsignup-agree {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        color: #5c5c5c;
+        p {
+          font-size: 10px;
+          font-weight: 500;
+        }
+      }
+      button {
+        width: 300px;
+        height: 50px;
+        color: white;
+        background: #ff4141;
+        border: none;
+        font-size: 24px;
+        font-weight: 500;
+        cursor: pointer;
+      }
+    }
+    .loginsignup-login {
+      margin-top: 20px;
+      color: #5c5c5c;
+      font-size: 18px;
+      font-weight: 500;
+      span {
+        color: #ff4141;
+        font-weight: 600;
+      }
+    }
+  }
+}

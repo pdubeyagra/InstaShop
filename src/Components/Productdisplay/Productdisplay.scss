@@ -1,0 +1,108 @@
+.productdisplay {
+  display: flex;
+  gap: 20px;
+  margin-top: 30px;
+  padding: 0px 170px;
+  margin-bottom: 50px;
+  .productdisplay-left {
+    .productdisplay-img-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      img {
+        width: 120px;
+        height: 114px;
+      }
+    }
+  }
+  .productdisplay-img {
+    .productdisplay-main-img {
+      width: 500px;
+      height: 487px;
+    }
+  }
+  .productdisplay-right {
+    display: flex;
+    flex-direction: column;
+    h1 {
+      color: #3d3d3d;
+      font-size: 30px;
+      font-weight: 700;
+      text-align: left;
+    }
+    .productdisplay-right-stars {
+      display: flex;
+      align-items: center;
+      margin-top: 13px;
+      gap: 5px;
+      color: #1c1c1c;
+      font-size: 16px;
+    }
+    .productdisplay-right-prices {
+      display: flex;
+      margin: 8px 0px;
+      gap: 30px;
+      font-size: 24px;
+      font-weight: 700;
+      .productdisplay-oldprice {
+        color: #818188;
+        text-decoration: line-through;
+      }
+      .productdisplay-newprice {
+        color: #f14141;
+      }
+    }
+    .productdisplay-description {
+      font-size: 12px;
+      text-align: left;
+    }
+    .productdisplay-size {
+      h1 {
+        margin-top: 20px;
+        color: #656565;
+        font-size: 20px;
+        font-weight: 600;
+      }
+      .productdisplay-sizes {
+        display: flex;
+        margin: 30px 0px;
+        gap: 20px;
+        div {
+          padding: 18px 24px;
+          background: #fbfbfb;
+          border: 1px solid #ebebeb;
+          border-radius: 3px;
+          cursor: pointer;
+        }
+      }
+    }
+    button {
+      padding: 15px 20px;
+      width: 200px;
+      font-size: 16px;
+      font-weight: 600;
+      color: white;
+      background: #ff4141;
+      margin-bottom: 20px;
+      border: none;
+      outline: none;
+      cursor: pointer;
+    }
+    .productdisplay-category {
+      text-align: left;
+      font-size: 12px;
+      span {
+        font-weight: 700;
+        font-size: 16px;
+      }
+    }
+    .productdisplay-tags {
+      text-align: left;
+      font-size: 12px;
+      span {
+        font-weight: 700;
+        font-size: 16px;
+      }
+    }
+  }
+}
