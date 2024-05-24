@@ -2,42 +2,45 @@ import React from "react";
 import "./Productdisplay.scss";
 import star_icon from "../../Assets/star_icon.png";
 import star_dull_icon from "../../Assets/star_dull_icon.png";
-// import { useDispatch } from "react-redux";
-// import { addToCart } from '../../CartActions/cartActions';
-import { useCart } from "../../Context/cartContext";
+import { useDispatch } from "react-redux";
+import { addToCart } from '../../CartActions/cartActions';
 
 const Productdisplay = (props) => {
   const { product } = props;
-  const { addToCart } = useCart();
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   if (!product) {
     return null; // Add a check to ensure product is defined
-  }
-
-  // const handleAddToCart = () => {
-  //   dispatch(addToCart(product));
-  //   // console.log(product)
-  // };
-  const handleAddToCart = () => {
-    addToCart(product);
   };
 
-  // const renderStars = (rating) => {
-  //   const totalStars = 5;
-  //   const fullStars = Math.floor(rating);
-  //   const halfStars = rating % 1 ? 1 : 0;
-  //   const emptyStars = totalStars - fullStars - halfStars;
+  const handleAddToCart = () => {
+    dispatch(addToCart(product)); // Dispatch the action properly
+  };
 
-  //   return (
-  //     <>
-  //       {Array(fullStars).fill(<img src={star_icon} alt="Star" />)}
-  //       {halfStars ? <img src={star_icon} alt="Half Star" /> : null}
-  //       {Array(emptyStars).fill(<img src={star_dull_icon} alt="Empty Star" />)}
-  //     </>
-  //   );
-  // };
-  // console.log('Button clicked, adding to cart:', product.id);
+  const renderStars = (rating) => {
+    const totalStars = 5;
+    const fullStars = Math.floor(rating);
+    const halfStars = rating % 1 ? 1 : 0;
+    const emptyStars = totalStars - fullStars - halfStars;
+
+    const stars = [];
+
+    for (let i = 0; i < fullStars; i++) {
+      stars.push(<img key={i} src={star_icon} alt="Star" />);
+    }
+
+    if (halfStars) {
+      stars.push(<img key="half" src={star_icon} alt="Half Star" />);
+    }
+
+    for (let i = 0; i < emptyStars; i++) {
+      stars.push(<img key={i + fullStars + halfStars} src={star_dull_icon} alt="Empty Star" />);
+    }
+
+    return stars;
+  };
+
+  console.log('Button clicked, adding to cart:', product.id);
 
   return (
     <div className="productdisplay">
@@ -59,12 +62,7 @@ const Productdisplay = (props) => {
       <div className="productdisplay-right">
         <h1>{product.name}</h1>
         <div className="productdisplay-right-stars">
-          {/* {renderStars(product.rating)} Assume product.rating is available */}
-          <img src={star_icon} alt="" />
-          <img src={star_icon} alt="" />
-          <img src={star_icon} alt="" />
-          <img src={star_icon} alt="" />
-          <img src={star_dull_icon} alt="" />
+          {renderStars(product.rating)}
           <p>(122)</p>
         </div>
         <div className="productdisplay-right-prices">

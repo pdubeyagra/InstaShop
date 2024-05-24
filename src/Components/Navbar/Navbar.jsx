@@ -10,8 +10,10 @@ const Navbar = () => {
     <>
       <div className="Navbar">
         <div className="nav-logo">
+          <Link to="/" style={{textDecoration: 'none'}}>
           <img src={logo} alt="" />
           <span>InstaShop</span>
+          </Link>
         </div>
         <ul className="nav-menu">
           <li
@@ -48,8 +50,12 @@ const Navbar = () => {
           </li>
         </ul>
         <div className="nav-right">
+          <Link to="/login">
           <button>Login</button>
+          </Link>
+          <Link to="/cart">
           <img src={cart_icon} alt="" />
+          </Link>
           <div className="nav-cart-count">0</div>
         </div>
       </div>
