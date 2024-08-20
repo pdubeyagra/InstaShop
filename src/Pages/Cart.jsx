@@ -1,12 +1,13 @@
-import React from 'react'
+import React from "react";
 import Cartitems from '../Components/CartItems/Cartitems'
+import "./cart.scss";
 
 const Cart = () => {
   return (
-    <div className='Cart'>
+    <div class="Cart">
       <Cartitems />
     </div>
-  )
-}
+  );
+};
 
-export default Cart
+export default Cart;
